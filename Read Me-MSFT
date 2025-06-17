@@ -1,0 +1,46 @@
+Bitcoin Price Strategy Analysis & Backtesting
+This project showcases a full pipeline for backtesting a Bitcoin trading strategy using historical market data. Built for freelance and portfolio use, it demonstrates data handling, strategy logic, and performance analysis using Python libraries like Backtrader and PyFolio.
+
+🎯 Objectives
+Load and clean BTC-USD historical data
+
+Apply a custom trading strategy (Moving Average Crossover)
+
+Backtest using the Backtrader engine
+
+Analyze results using PyFolio for performance metrics
+
+Export key performance charts and logs
+
+🛠️ Tech Stack
+Python (Google Colab)
+
+Pandas & NumPy
+
+Backtrader (strategy backtesting)
+
+PyFolio (performance analysis)
+
+Matplotlib (visualization)
+
+yfinance (data sourcing)
+
+📈 Strategy Summary
+Type: Simple Moving Average Crossover
+
+Buy Signal: When short-term SMA crosses above long-term SMA
+
+Sell Signal: When short-term SMA crosses below long-term SMA
+
+Asset: Bitcoin (BTC-USD)
+
+Data Range: Adjustable via yfinance
+
+📊 Performance Metrics
+Returns analysis
+
+Volatility & Sharpe ratio
+
+Drawdown curves
+
+Trade logs and visual plots
