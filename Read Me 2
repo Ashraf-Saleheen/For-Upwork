@@ -1,0 +1,42 @@
+📈 Amazon Stock Price Prediction & Backtesting Strategy
+This project demonstrates a simple predictive analysis and backtesting pipeline using Amazon stock price data. It is designed as a showcase of data preprocessing, model building, and basic strategy validation for freelance clients on platforms like Upwork.
+
+🔍 Project Goals
+Load and explore historical stock data
+
+Clean and preprocess the dataset
+
+Create predictive features using technical indicators
+
+Train a machine learning model (Random Forest)
+
+Backtest a simple long/short trading strategy
+
+Visualize and evaluate strategy performance
+
+🧰 Technologies Used
+Python
+
+Pandas & NumPy
+
+scikit-learn
+
+yfinance
+
+matplotlib & seaborn
+
+📊 Strategy Overview
+Model: Random Forest Classifier
+
+Target: Predict 1-day forward price movement (Up or Down)
+
+Features: Momentum-based indicators (e.g., returns, moving averages)
+
+Backtest Logic: Buy on predicted uptrend, sell on predicted downtrend
+
+✅ Results
+Achieved reasonable predictive performance using engineered features
+
+Backtesting highlighted potential of ML-based trading signals
+
+Visual analysis provided trade insight and drawdown understanding
