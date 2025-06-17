@@ -1,0 +1,40 @@
+This notebook demonstrates a refined approach to algorithmic crypto trading using custom signal filtering logic and a structured pipeline. It builds on core backtesting principles while integrating improved trade decision rules and visual analytics.
+
+🎯 Project Goals
+Clean and structure BTC-USD historical price data
+
+Implement signal-based strategy (filtered with multiple logic layers)
+
+Visualize buy/sell signals directly on price charts
+
+Store trade history in a custom log format
+
+Lay groundwork for future real-time or automated systems
+
+🧠 Strategy Enhancements
+Signal Logic:
+
+Uses multiple filters before generating a trade signal
+
+Incorporates daily return calculations
+
+Ensures non-redundant entries (one open trade at a time)
+
+Trade Management:
+
+Track entry and exit dates, prices, and profit
+
+Avoid repeated buy/sell signals during holding periods
+
+🧰 Tools & Libraries
+Python (Google Colab)
+
+pandas, numpy – Data manipulation
+
+yfinance – Market data sourcing
+
+matplotlib – Visualization
+
+datetime – Time-based filtering
+
+warnings – Cleaner output
