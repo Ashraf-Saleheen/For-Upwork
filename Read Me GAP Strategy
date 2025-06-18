@@ -1,0 +1,66 @@
+# 📈 Gap Fill Trading Strategy (Pine Script)
+
+This Pine Script strategy is based on the **gap fill theory**, which aims to exploit price imbalances between consecutive trading sessions. The strategy detects **gap ups** and **gap downs** and trades in the direction of the fill—buying when price gaps down and selling short when price gaps up.
+
+---
+
+## 🔍 Strategy Logic
+
+- **Gap Detection**:
+  - A gap is identified when the current session's open differs by **at least 1%** from the previous session's close.
+
+- **Trade Entry**:
+  - **Long Entry**: If a gap **down** of ≥1% is detected → Buy
+  - **Short Entry**: If a gap **up** of ≥1% is detected → Short
+
+- **Exit Conditions**:
+  - **Gap Fill Target**: Exit when price reaches the previous session's close (fills the gap)
+  - **Stop-Loss**: 2% from entry in the opposite direction to limit risk
+
+---
+
+## ⚙️ Configurable Parameters
+
+| Parameter         | Description                                    | Default |
+|-------------------|------------------------------------------------|---------|
+| Minimum Gap %     | Minimum size of the gap to trigger a trade     | 1.0     |
+| Stop Loss %       | Stop-loss as a percentage of entry price       | 2.0     |
+
+---
+
+## 🛠️ How to Use
+
+1. Open [TradingView](https://www.tradingview.com/)
+2. Open any chart (e.g., AAPL, BTCUSD, EURUSD)
+3. Open the **Pine Editor** and paste the code from `Gap_Fill_Strategy.pine`
+4. Click **"Add to Chart"**
+5. View trades and results in the **Strategy Tester**
+
+---
+
+## 📊 Best Use Cases
+
+- Daily or 4H timeframes
+- Liquid instruments with frequent price gaps (e.g., stocks, forex majors, crypto)
+- Ideal for traders exploring mean reversion or market inefficiency strategies
+
+---
+
+## 📁 Files Included
+
+- `Gap_Fill_Strategy.pine` – Full Pine Script code
+- `README.md` – Documentation and usage guide
+
+---
+
+## 🧠 Author
+
+Created by **Ashraf Saleheen**  
+🔗 [GitHub Profile](https://github.com/Ashraf-Saleheen)
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) — feel free to use and modify it for personal or commercial purposes.
+
