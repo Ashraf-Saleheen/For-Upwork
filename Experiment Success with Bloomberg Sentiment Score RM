@@ -1,0 +1,22 @@
+Project Overview
+I have tried to explore a trading strategy that combines Bloomberg Sentiment scores with price data to generate buy and sell signals. The primary objectives are:
+
+Data Integration: Incorporate Bloomberg Sentiment scores into the trading strategy.
+
+Signal Generation: Develop buy/sell signals based on sentiment and price data.
+
+Backtesting: Evaluate the strategy's performance using historical data.
+
+Visualization: Present results through comprehensive visualizations.
+
+Contents
+Experiment_Success_With_BB_Sentiment_Strategy.ipynb: The main Jupyter Notebook containing the code, analysis, and visualizations.
+
+Features
+Data Loading and Preprocessing: Import and clean historical price and sentiment data.
+
+Signal Generation: Create trading signals using a combination of sentiment scores and price indicators.
+
+Backtesting: Implement a backtesting framework to evaluate strategy performance.
+
+Visualization: Generate plots to visualize trading signals, price movements, and performance metrics.
