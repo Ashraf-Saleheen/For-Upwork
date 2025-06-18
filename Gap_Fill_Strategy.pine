@@ -1,0 +1,45 @@
+//@version=5
+strategy("Gap Fill Strategy - Long & Short", overlay=true, default_qty_type=strategy.percent_of_equity, default_qty_value=100)
+
+// === INPUTS ===
+minGapPct     = input.float(1.0, title="Minimum Gap %", step=0.1)
+stopLossPct   = input.float(2.0, title="Stop Loss %", step=0.1)
+
+// === VARIABLES ===
+gapSize       = math.abs(open - close[1])
+gapPct        = gapSize / close[1] * 100
+gapDown       = open < close[1] and gapPct >= minGapPct
+gapUp         = open > close[1] and gapPct >= minGapPct
+gapLevel      = close[1]
+
+// === ENTRY CONDITIONS ===
+longEntry     = gapDown and strategy.position_size == 0
+shortEntry    = gapUp and strategy.position_size == 0
+
+// === EXIT CONDITIONS ===
+longExit      = strategy.position_size > 0 and close >= gapLevel
+shortExit     = strategy.position_size < 0 and close <= gapLevel
+
+// === STOP LOSS CALC ===
+longStop      = open * (1 - stopLossPct / 100)
+shortStop     = open * (1 + stopLossPct / 100)
+
+longSLHit     = strategy.position_size > 0 and close <= longStop
+shortSLHit    = strategy.position_size < 0 and close >= shortStop
+
+// === ENTRIES ===
+if (longEntry)
+    strategy.entry("Long Gap", strategy.long)
+if (shortEntry)
+    strategy.entry("Short Gap", strategy.short)
+
+// === EXITS ===
+if (longExit or longSLHit)
+    strategy.close("Long Gap", comment=longSLHit ? "SL" : "Gap Filled")
+
+if (shortExit or shortSLHit)
+    strategy.close("Short Gap", comment=shortSLHit ? "SL" : "Gap Filled")
+
+// === PLOTTING ===
+plot(gapDown ? gapLevel : na, color=color.lime, title="Gap Down Target", linewidth=2, style=plot.style_linebr)
+plot(gapUp ? gapLevel : na, color=color.red, title="Gap Up Target", linewidth=2, style=plot.style_linebr)
