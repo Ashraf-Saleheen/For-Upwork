@@ -1,0 +1,69 @@
+
+his script scrapes recent news headlines for selected stock tickers from Finviz, performs sentiment analysis using VADER (Valence Aware Dictionary and sEntiment Reasoner), and visualizes average sentiment scores by date.
+
+📌 Features
+Scrapes news headlines for selected tickers from Finviz.
+
+Parses and processes headline publication dates.
+
+Performs sentiment analysis using NLTK’s VADER model.
+
+Visualizes average sentiment scores by ticker and date using Matplotlib.
+
+🧰 Dependencies
+pandas
+
+matplotlib
+
+beautifulsoup4
+
+nltk
+
+urllib
+
+datetime
+
+time, random
+
+Install required packages (if not already available):
+
+bash
+Copy
+Edit
+pip install pandas matplotlib beautifulsoup4 nltk
+🚀 How to Use
+Clone or download this repository.
+
+Run the Python script:
+
+bash
+Copy
+Edit
+python your_script_name.py
+A bar chart will appear showing the average sentiment score per day for each ticker.
+
+✍️ Ticker Configuration
+To analyze different stocks, modify the tickers list:
+
+python
+Copy
+Edit
+tickers = ['AMZN', 'GOOG', 'META']
+⚠️ Notes & Troubleshooting
+If you get no results, Finviz may have blocked your IP or changed its HTML structure.
+
+Add delay/randomization between requests to reduce the risk of being blocked.
+
+Requires internet access to fetch headlines.
+
+This tool is for educational/research purposes only and not intended for financial advice.
+
+📊 Output Example
+The script outputs a bar chart that looks like this:
+Average News Sentiment by Ticker
++------------+------------+------------+
+|   Date     |   AMZN     |   GOOG     |
++------------+------------+------------+
+| 2025-06-18 |   0.12     |   -0.03    |
+| 2025-06-17 |   0.20     |   0.08     |
++------------+------------+------------+
